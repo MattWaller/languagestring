@@ -2,7 +2,7 @@
 
 
 <strong> To use: </strong>
-
+<p>pip install languagestring </p>
 <p> from languagestring import languagestring </p>
 <p>ls = languagestring()</p>
 <p> # get czech characters </p>
