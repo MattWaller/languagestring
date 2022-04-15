@@ -1,9 +1,10 @@
-import requests,json
+import requests,json, os
 from bs4 import BeautifulSoup
 
 
 def scraper():
-	with open('assets/mapping.json','r') as f:
+	cp ='/'.join( f'{os.path.realpath(__file__)}'.split('/')[:-2])
+	with open(f'{cp}/languagestring/assets/mapping.json','r') as f:
 		languages = json.load(f)
 		f.close()
 	print(languages) 
@@ -74,7 +75,7 @@ def scraper():
 				language_dict[language]['other']['description']	= descriptions			
 		#raise 'ee'
 		print(language_dict)
-	with open('assets/language_detailed.json','w') as f:
+	with open(f'{cp}/languagestring/assets/language_detailed.json','w') as f:
 		json.dump(language_dict,f)
 		f.close()
 
